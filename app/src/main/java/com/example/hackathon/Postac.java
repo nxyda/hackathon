@@ -1,13 +1,16 @@
 package com.example.hackathon;
 
+import com.example.hackathon.models.EducationEnum;
+import com.example.hackathon.models.GenderEnum;
+
 import java.io.Serializable;
 import java.util.List;
 
 public class Postac implements Serializable {
     private String name;
-    private char gender;
+    private GenderEnum gender;
     private int health;
-    private String education;
+    private EducationEnum education;
     private String carer;
     private int income;
     private int money;
@@ -29,11 +32,11 @@ public class Postac implements Serializable {
         this.name = name;
     }
 
-    public char getGender() {
+    public GenderEnum getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(GenderEnum gender) {
         this.gender = gender;
     }
 
@@ -45,11 +48,11 @@ public class Postac implements Serializable {
         this.health = health;
     }
 
-    public String getEducation() {
+    public EducationEnum getEducation() {
         return education;
     }
 
-    public void setEducation(String education) {
+    public void setEducation(EducationEnum education) {
         this.education = education;
     }
 
@@ -126,3 +129,4 @@ public class Postac implements Serializable {
     }
 
 }
+

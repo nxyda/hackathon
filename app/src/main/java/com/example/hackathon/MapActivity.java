@@ -7,6 +7,10 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.hackathon.buildings.Building;
+import com.example.hackathon.buildings.BuildingBank;
+import com.example.hackathon.buildings.BuildingOffice;
+
 public class MapActivity extends AppCompatActivity {
 
     private ImageView playerImageView;

@@ -5,6 +5,8 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.hackathon.buildings.Building;
+
 public class BuildingActivity extends AppCompatActivity {
 
     private Postac player;

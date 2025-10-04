@@ -16,7 +16,6 @@ object OpenAIClient {
         .ignoreIfMalformed()
         .ignoreIfMissing()
         .load()
-
     private const val BASE_URL = "https://api.openai.com/v1/responses"
     private val client = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS) // czas na połączenie
