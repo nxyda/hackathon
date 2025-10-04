@@ -10,7 +10,7 @@ public class BuildingActivity extends AppCompatActivity {
     private Postac player;
     private Building building;
 
-
+//
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
