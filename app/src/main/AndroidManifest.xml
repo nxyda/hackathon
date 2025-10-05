@@ -29,6 +29,26 @@
             </intent-filter>
         </activity>
 
+        <!-- Pozostałe aktywności -->
+        <activity
+            android:name=".BuildingActivity"
+            android:exported="false"
+            android:screenOrientation="landscape"
+            android:label="Budynek" />
+
+        <activity
+            android:name=".PhoneActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="Telefon" />
+
+        <activity
+            android:name=".CharacterCreatorActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:label="Tworzenie postaci" />
+
+
     </application>
 
 </manifest>

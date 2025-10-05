@@ -10,5 +10,6 @@ data class NPC(
      val relation: Relation,
      val actions: List<Action>,
     val gender: GenderEnum
+
 )
 

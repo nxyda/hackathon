@@ -13,6 +13,10 @@ import com.example.hackathon.buildings.BuildingClub;
 import com.example.hackathon.buildings.BuildingOffice;
 import com.example.hackathon.buildings.BuildingPark;
 
+import com.example.hackathon.buildings.Building;
+import com.example.hackathon.buildings.BuildingBank;
+import com.example.hackathon.buildings.BuildingOffice;
+
 import java.util.List;
 import java.util.Random;
 
@@ -93,7 +97,7 @@ public class MapActivity extends AppCompatActivity {
     }
 
     private void moveHome() {
-        if ("House".equals(Postac.live)) {
+        if ("House".equals(player.getLive())) {
             playerImageView.setX(60f);
             playerImageView.setY(270f);
         } else {

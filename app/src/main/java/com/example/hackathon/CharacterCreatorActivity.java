@@ -31,6 +31,7 @@ public class CharacterCreatorActivity extends AppCompatActivity {
         setupButtonWithImage(R.id.sztuka, R.id.sztuka_image);
         setupButtonWithImage(R.id.internet, R.id.internet_image);
         setupButtonWithImage(R.id.gotowanie, R.id.gotowanie_image);
+//        setupButtonWithImage(R.id.inwestowanie, R.id.inwestowanie_image);
         setupButtonWithImage(R.id.filmy, R.id.filmy_image);
         setupButtonWithImage(R.id.literatura, R.id.literatura_image);
         setupButtonWithImage(R.id.srednie, R.id.srednie_image);
@@ -52,6 +53,7 @@ public class CharacterCreatorActivity extends AppCompatActivity {
     }
 
     private void nextScreen() {
+        Postac player = new Postac();
 
         ImageView mezczyznaImage = findViewById(R.id.mezczyzna_image);
         ImageView kobietaImage = findViewById(R.id.kobeita_image);

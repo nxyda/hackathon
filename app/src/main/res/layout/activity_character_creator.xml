@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFDDDD">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -70,6 +71,7 @@
         app:srcCompat="@drawable/button_yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         tools:translationX="2dp"
         tools:translationY="0dp" />
 
@@ -236,17 +238,21 @@
 
     <Button
         android:id="@+id/mezczyzna"
-        android:layout_width="90dp"
+        android:textColor="@color/black"
+        android:layout_width="118dp"
+        android:textSize="11sp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="Mężcyzna"
+        android:text="Mężczyzna"
         android:background="@android:color/transparent"
-        tools:translationX="26dp"
+        tools:translationX="12dp"
         tools:translationY="18dp" />
 
     <Button
         android:id="@+id/kobieta"
+        android:textColor="@color/black"
+        android:textSize="11sp"
         android:layout_width="90dp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -258,6 +264,7 @@
 
     <Button
         android:id="@+id/sport"
+        android:textColor="@color/black"
         android:background="@android:color/transparent"
         android:layout_width="90dp"
         android:layout_height="48dp"
@@ -269,6 +276,7 @@
 
     <Button
         android:id="@+id/nauka"
+        android:textColor="@color/black"
         android:layout_width="90dp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -280,29 +288,34 @@
 
     <Button
         android:id="@+id/sztuka"
-        android:layout_width="90dp"
+        android:textColor="@color/black"
+        android:layout_width="98dp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:text="Sztuka"
         android:background="@android:color/transparent"
-        tools:translationX="26dp"
+        tools:translationX="22dp"
         tools:translationY="100dp" />
 
     <Button
         android:id="@+id/muzyka"
-        android:layout_width="90dp"
+        android:textColor="@color/black"
+        android:layout_width="98dp"
         android:layout_height="48dp"
         android:text="Muzyka"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:background="@android:color/transparent"
-        tools:translationX="26dp"
+        tools:translationX="22dp"
         tools:translationY="129dp" />
 
     <Button
         android:id="@+id/internet"
         android:layout_width="90dp"
+        android:textColor="@color/black"
+        android:textSize="10sp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -315,6 +328,8 @@
         android:id="@+id/gotowanie"
         android:layout_width="90dp"
         android:layout_height="48dp"
+        android:textSize="8.8sp"
+        android:textColor="@color/black"
         android:text="Gotowanie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -322,30 +337,32 @@
         tools:translationX="199dp"
         tools:translationY="166dp" />
 
-<!--    <Button-->
-<!--        android:id="@+id/majsterkowanie"-->
-<!--        android:layout_width="90dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:layout_height="48dp"-->
-<!--        android:textSize="8dp"-->
-<!--        android:text="Majsterkowanie"-->
-<!--        android:background="@android:color/transparent"-->
-<!--        tools:translationX="26dp"-->
-<!--        tools:translationY="167dp" />-->
+    <Button
+        android:id="@+id/majsterkowanie"
+        android:textColor="@color/black"
+        android:layout_width="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="48dp"
+        android:textSize="8sp"
+        android:text="Majsterko-wanie"
+        android:background="@android:color/transparent"
+        tools:translationX="26dp"
+        tools:translationY="167dp" />
 
-<!--    <Button-->
-<!--        android:id="@+id/inwestowanie"-->
-<!--        android:layout_width="90dp"-->
-<!--        android:layout_height="48dp"-->
-<!--        android:textSize="10dp"-->
-<!--        android:text="Inwestowanie"-->
-<!--        android:background="@android:color/transparent"-->
-<!--        android:contentDescription="Inwestowanie"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:layout_marginStart="26dp"-->
-<!--        android:layout_marginTop="216dp"/>-->
+    <Button
+        android:id="@+id/inwestowanie"
+        android:textColor="@color/black"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:textSize="9sp"
+        android:text="Inwestowanie"
+        android:background="@android:color/transparent"
+        android:contentDescription="Inwestowanie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="216dp"/>
 
 
     <Button
@@ -354,22 +371,25 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="90dp"
         android:layout_height="48dp"
+        android:textColor="@color/black"
+        android:textSize="12sp"
         android:text="Średnie"
         android:background="@android:color/transparent"
         tools:translationX="16dp"
         tools:translationY="280dp" />
 
-<!--    <Button-->
-<!--        android:id="@+id/zawodowe"-->
-<!--        android:layout_width="90dp"-->
-<!--        android:layout_height="48dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:textSize="10dp"-->
-<!--        android:text="Zawodowe"-->
-<!--        android:background="@android:color/transparent"-->
-<!--        tools:translationX="119dp"-->
-<!--        tools:translationY="280dp" />-->
+    <Button
+        android:id="@+id/zawodowe"
+        android:layout_width="80dp"
+        android:textColor="@color/black"
+        android:layout_height="54dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="7.2sp"
+        android:text="Zawodowe"
+        android:background="@android:color/transparent"
+        tools:translationX="124dp"
+        tools:translationY="276dp" />
 
     <Button
         android:id="@+id/wyzsze"
@@ -377,35 +397,39 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="48dp"
+        android:textSize="13sp"
         android:text="Wyższe"
+        android:textColor="@color/black"
         android:background="@android:color/transparent"
         tools:translationX="218dp"
         tools:translationY="280dp" />
 
-<!--    <Button-->
-<!--        android:id="@+id/introwertyk"-->
-<!--        android:layout_width="90dp"-->
-<!--        android:layout_height="60dp"-->
-<!--        android:text="Introwertyk"-->
-<!--        android:textSize="10dp"-->
-<!--        android:background="@android:color/transparent"-->
-<!--        android:contentDescription="Introwertyk"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:layout_marginStart="199dp"-->
-<!--        android:layout_marginTop="342dp"/>-->
+    <Button
+        android:id="@+id/introwertyk"
+        android:textColor="@color/black"
+        android:layout_width="98dp"
+        android:layout_height="60dp"
+        android:text="Introwertyk"
+        android:textSize="8.5sp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Introwertyk"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="340dp"/>
 
-<!--    <Button-->
-<!--        android:id="@+id/ekstrawertyk"-->
-<!--        android:layout_width="90dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        android:textSize="8dp"-->
-<!--        android:layout_height="48dp"-->
-<!--        android:text="Ekstrawertyk"-->
-<!--        android:background="@android:color/transparent"-->
-<!--        tools:translationX="16dp"-->
-<!--        tools:translationY="348dp" />-->
+    <Button
+        android:id="@+id/ekstrawertyk"
+        android:layout_width="98dp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="7sp"
+        android:layout_height="48dp"
+        android:text="Ekstrawertyk"
+        android:background="@android:color/transparent"
+        tools:translationX="16dp"
+        tools:translationY="346dp" />
 
     <Button
         android:id="@+id/filmy"
@@ -413,6 +437,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="48dp"
+        android:textColor="@color/black"
         android:background="@android:color/transparent"
         android:text="Filmy"
         tools:translationX="199dp"
@@ -420,7 +445,9 @@
 
     <Button
         android:id="@+id/literatura"
-        android:layout_width="90dp"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        android:layout_width="98dp"
         android:layout_height="48dp"
         android:text="Literatura"
         android:background="@android:color/transparent"
@@ -430,11 +457,12 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginStart="26dp"
+        android:layout_marginStart="22dp"
         android:layout_marginTop="-226dp"/>
 
     <Button
         android:id="@+id/dalej"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dalej"

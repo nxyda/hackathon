@@ -1,40 +1,163 @@
 package com.example.hackathon;
 
 import com.example.hackathon.models.EducationEnum;
-import com.example.hackathon.models.GenderEnum;
+import com.example.hackathon.models.NPC;
 
 import java.io.Serializable;
 import java.util.List;
 
-public abstract class Postac implements Serializable {
-
+public class Postac implements Serializable {
     public static int maxPoints;
-    public static String name;
-    public static GenderEnum gender;
-    public static int health = 100;
-    public static int age = 18;
-    public static EducationEnum education;
-    public static String carer;
-    public static int income;
-    public static int money = 1000;
-    public static int happiness = 100;
-    public static int retiring;
-    public static int successPoint;
-    public static String live;
-    public static String personality;
-    public static List<String> hobbys;
-    public static List<Postac> friends;
+    private String name;
+    private char gender;
+    private int health;
+    private int age;
+    private EducationEnum education;
+    private String carer;
+    private int income;
+    private int money;
+    private int happiness;
+    private int retiring;
+    private int successPoint;
+    private String live;
+    private String personality;
 
-    public static void applyEvent(Event event) {
-        health += event.getHealth();
-        if (health > 100) health = 100;
-        if (health < 0) health = 0;
+    private List<String> hobbys;
 
-        happiness += event.getHappiness();
-        if (happiness > 100) happiness = 100;
-        if (happiness < 0) happiness = 0;
+    // inni ludzie
+    private List<NPC> friends;
 
-        money += event.getMoney();
-        if (money < 0) money = 0;
+    public Postac() {
+        this.health = 100;
+        this.happiness = 100;
+        this.money = 1000;
+        this.age = 18;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public char getGender() {
+        return gender;
+    }
+
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
+
+    public int getHealth() {
+        return health;
+    }
+
+    public void setHealth(int health) {
+        this.health = health;
+    }
+
+    public int getAge() {return age;}
+
+    public void setAge(int age) {}
+
+    public EducationEnum getEducation() {
+        return education;
+    }
+
+    public void setEducation(EducationEnum education) {
+        this.education = education;
+    }
+
+    public String getCarer() {
+        return carer;
+    }
+
+    public void setCarer(String carer) {
+        this.carer = carer;
+    }
+
+    public int getIncome() {
+        return income;
+    }
+
+    public void setIncome(int income) {
+        this.income = income;
+    }
+
+    public int getMoney() {
+        return money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public int getHappiness() {
+        return happiness;
+    }
+
+    public void setHappiness(int happiness) {
+        this.happiness = happiness;
+    }
+
+    public int getRetiring() {
+        return retiring;
+    }
+
+    public void setRetiring(int retiring) {
+        this.retiring = retiring;
+    }
+
+    public int getSuccessPoint() {
+        return successPoint;
+    }
+
+    public void setSuccessPoint(int successPoint) {
+        this.successPoint = successPoint;
+    }
+
+    public List<String> getHobbys() {
+        return hobbys;
+    }
+
+    public void setHobbys(List<String> hobbys) {
+        this.hobbys = hobbys;
+    }
+
+    public List<NPC> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(List<NPC> friends) {
+        this.friends = friends;
+    }
+
+    public String getLive() {
+        return live;
+    }
+
+    public void setLive(String live) {
+        this.live = live;
+    }
+
+    public String getPersonality() {return personality;}
+
+    public void setPersonality(String personality) {this.personality = personality;}
+
+    public void applyEvent(Event event) {
+
+        this.health += event.getHealth();
+        if (this.health > 100) this.health = 100;
+        if (this.health < 0) this.health = 0;
+
+        this.happiness += event.getHappiness();
+        if (this.happiness > 100) this.happiness = 100;
+        if (this.happiness < 0) this.happiness = 0;
+
+        this.money += event.getMoney();
+        if (this.money < 0) this.money = 0;
+
     }
 }

@@ -1,7 +1,8 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/green">
 
     <ImageView
         android:id="@+id/imageView"
@@ -196,14 +197,16 @@
 
     <TextView
         android:id="@+id/money"
+        android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_width="75dp"
         android:layout_height="50dp"
-        android:text="Money: \n1000 zł" />
+        android:text="Pieniądze: \n1000 zł" />
 
     <TextView
         android:id="@+id/zdrowie"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="40dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -212,6 +215,7 @@
     <TextView
         android:id="@+id/zdrowie_punkty"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -220,6 +224,7 @@
     <TextView
         android:id="@+id/szczescie"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="80dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -228,6 +233,7 @@
     <TextView
         android:id="@+id/szczescie_punkty"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -236,6 +242,7 @@
     <TextView
         android:id="@+id/tury"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="120dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -244,6 +251,7 @@
     <TextView
         android:id="@+id/tury_punkty"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="140dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -252,6 +260,7 @@
     <TextView
         android:id="@+id/wiek"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="160dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -260,34 +269,63 @@
     <TextView
         android:id="@+id/wiek_punkty"
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:layout_marginTop="180dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="18" />
 
+
     <ImageView
         android:id="@+id/phone"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_marginLeft="6dp"
-        android:layout_marginTop="340dp"
-        android:contentDescription="Phone icon"
+        android:layout_width="110dp"
+        android:layout_height="144dp"
+        android:layout_marginLeft="-18dp"
+        android:layout_marginTop="270dp"
         android:clickable="true"
+        android:contentDescription="Phone icon"
         android:focusable="true"
         android:scaleType="centerInside"
-        app:srcCompat="@drawable/phone"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
+        app:srcCompat="@drawable/phone" />
 
     <Button
         android:id="@+id/button_phone"
-        android:layout_width="50dp"
-        android:layout_height="68dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginTop="338dp"
+        android:layout_width="90dp"
+        android:layout_height="144dp"
+        android:layout_marginLeft="-18dp"
+        android:layout_marginTop="268dp"
         android:contentDescription="Telefon"
         android:text=""
+        android:background="@android:color/transparent" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="100dp"
+        android:layout_height="144dp"
+        android:layout_marginLeft="650dp"
+        android:layout_marginTop="-38dp"
+        android:clickable="true"
+        android:contentDescription="Phone icon"
+        android:focusable="true"
+        android:scaleType="centerInside"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow" />
+
+    <Button
+        android:id="@+id/button_next"
+        android:textColor="@color/black"
+        android:layout_width="72dp"
+        android:layout_height="60dp"
+        android:textSize="9sp"
+        android:layout_marginLeft="655dp"
+        android:layout_marginTop="0dp"
+        android:contentDescription="Telefon"
+        android:text="Następna tura"
         android:background="@android:color/transparent" />
 
 

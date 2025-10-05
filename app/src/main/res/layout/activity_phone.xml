@@ -3,15 +3,42 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="#FFDDDD"
+    tools:context=".PhoneActivity">
 
     <ImageView
         android:id="@+id/phone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="Telefon"
         app:srcCompat="@drawable/phone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="Telefon" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="16dp" />
+
+    <ScrollView
+    android:id="@+id/scroll_container"
+    android:layout_width="194dp"
+    android:layout_height="339dp"
+    android:layout_marginEnd="252dp"
+    android:importantForAccessibility="no"
+    tools:ignore="SpeakableTextPresentCheck,MissingContentDescription"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <ImageView
+        android:id="@+id/top_profile_image"
+        android:layout_width="190dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="-60dp"
+        android:src="@drawable/osoba"
+        android:contentDescription="Profil startowy" />
+
+
+
+</ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
