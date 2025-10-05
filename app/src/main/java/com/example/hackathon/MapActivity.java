@@ -99,7 +99,7 @@ public class MapActivity extends AppCompatActivity {
     }
 
     private void moveHome() {
-        if ("House".equals(Postac.live)) {
+        if ("House".equals(player.getLive())) {
             playerImageView.setX(60f);
             playerImageView.setY(270f);
         } else {
