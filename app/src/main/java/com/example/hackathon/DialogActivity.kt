@@ -25,41 +25,58 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hackathon.actions.Action
-import com.example.hackathon.actions.ActionResult
 import com.example.hackathon.buildings.Building
-import com.example.hackathon.buildings.BuildingBank
-import com.example.hackathon.buildings.BuildingClub
 import com.example.hackathon.models.NPC
+import com.example.hackathon.services.TimeService
 import com.example.hackathon.ui.theme.HackathonTheme
 
 class DialogActivity : ComponentActivity() {
-    val building: Building = BuildingBank()
-    val history = mutableListOf(
-        OpenAIClient.Message("system", "Jestem Piotr i jestem w ${building.name}"),
+    lateinit var building: Building
 
-        )
+    val history = mutableListOf(
+        OpenAIClient.Message(
+            "system", "Jestem ${Postac.name} o płci ${Postac.gender} i jestem w ${building.name}"
+        ),
+    )
+
+    fun filterActions(actions: List<Action>, npc: NPC): List<Action> {
+        var ret = listOf<Action>()
+        ret = actions.filter { it.statsModification.cost <= TimeService.pointsLeft() }
+        ret = ret.filter { it.statsModification.income + Postac.money >= 0 }
+        ret = ret.map { action ->
+            if (action.statsModification.friendshipChange != 0 || action.statsModification.relationChange != 0) {
+                action.copy(statsModification = action.statsModification.copy(npc = npc))
+            } else {
+                action
+            }
+        }
+        return ret
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        building = (intent.getSerializableExtra("buildingObj") as Building?)!!
+
 
 
         setContent {
             HackathonTheme {
                 var npcText by remember { mutableStateOf("Witaj podróżniku!") }
                 val npc = building.npc
-                var actions by remember { mutableStateOf(building.action) }
+                var actions by remember { mutableStateOf(filterActions(building.action, npc)) }
 
                 NpcDialogScreen(
-                    npcName = npc.name, npcImage = R.drawable.jpg, // daj swój obrazek w drawable
-                    dialogOptions = actions, onOptionSelected = { option ->
+                    npcName = npc.name,
+                    npcImage = R.drawable.female_happy,
+                    dialogOptions = actions,
+                    onOptionSelected = { option ->
                         actions = ArrayList<Action>()
-                        if(option.nextActionChooser != null) {
+                        if (option.nextActionChooser != null) {
                             val actionResult = option.nextActionChooser.invoke()
-                            actions = actionResult.actions
+                            actions = filterActions(actionResult.actions, npc)
                         }
 
                         getResponse(npc, option) { newText ->
@@ -82,8 +99,7 @@ private fun DialogActivity.getResponse(
 
     history.add(
         OpenAIClient.Message(
-            "user",
-            "Mówię: ${option.visibleName}; chodzi mi o ${option.description}"
+            "user", "Mówię: ${option.visibleName}; chodzi mi o ${option.description}"
         ),
     )
     OpenAIClient.sendMessage(

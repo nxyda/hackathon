@@ -19,7 +19,6 @@ import java.util.Random;
 public class MapActivity extends AppCompatActivity {
 
     private ImageView playerImageView;
-    private Postac player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +26,6 @@ public class MapActivity extends AppCompatActivity {
         setContentView(R.layout.activity_map);
 
         playerImageView = findViewById(R.id.player);
-        player = (Postac) getIntent().getSerializableExtra("playerObj");
 
         moveHome();
 
@@ -79,7 +77,7 @@ public class MapActivity extends AppCompatActivity {
             int index = i;
             Button b = findViewById(buttonIds[i]);
             b.setOnClickListener(v -> {
-                Intent intent = new Intent(MapActivity.this, BuildingActivity.class);
+                Intent intent = new Intent(MapActivity.this, DialogActivity.class);
                 intent.putExtra("playerObj", player);
                 intent.putExtra("buildingObj", buildings[index]);
                 startActivity(intent);
