@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/biurowiec">
+    android:layout_height="match_parent">
 
-
+    <!-- Lewa część - scena z postacią i dymkami -->
     <FrameLayout
         android:layout_width="0dp"
         android:layout_weight="2"
@@ -51,7 +51,9 @@
             android:layout_marginTop="84dp"
             android:background="@android:color/transparent"
             android:contentDescription="Transparent button"
-            android:text="" />
+            android:text=""
+            android:textColor="#000"
+            />
 
         <Button
             android:id="@+id/choice2"
@@ -61,7 +63,8 @@
             android:layout_marginTop="184dp"
             android:background="@android:color/transparent"
             android:contentDescription="Transparent button"
-            android:text="" />
+            android:text=""
+            android:textColor="#000" />
 
         <Button
             android:id="@+id/choice3"
@@ -71,16 +74,8 @@
             android:layout_marginTop="290dp"
             android:background="@android:color/transparent"
             android:contentDescription="Transparent button"
-            android:text="" />
-
-        <Button
-            android:id="@+id/back"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent"
-            android:text="Back" />
+            android:text=""
+            android:textColor="#000"/>
     </FrameLayout>
 
     <!-- Prawa część - scrollowany panel -->
@@ -110,9 +105,9 @@
                 android:id="@+id/konwersacja"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:textSize="16sp"
-                android:lineSpacingExtra="4dp" />
+                android:lineSpacingExtra="4dp"
+                android:text="ddd"
+                android:textSize="16sp" />
 
         </LinearLayout>
     </ScrollView>

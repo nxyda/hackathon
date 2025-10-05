@@ -1,6 +1,9 @@
 package com.example.hackathon.actions;
 
+import static java.lang.Math.pow;
+
 import com.example.hackathon.models.StatsModification;
+import com.example.hackathon.services.TimeService;
 import com.example.hackathon.tools.ListElementRandomizer;
 
 import java.util.Arrays;
@@ -12,28 +15,68 @@ public class ClubActions {
 
     public static final Action dance = new Action(
             "Idz potańczyć",
-            "Jest możliwość poznania kogoś w tanecznych klimatach klubowych",
+            "Idziemy razem potańczyć w klubie może będzie fajnie",
             ClubActions::danceMechanic,
-            new StatsModification()
+            new StatsModification(
+                    2,
+                    0,
+                    null,
+                    0,
+                    5,
+                    null,
+                    null,
+                    0,
+                    0
+            )
     );
     public static final Action buyDrink = new Action(
             "Kup drinka",
             "Kupujesz i wypijasz drinka",
             () -> new ActionResult(Arrays.asList(ClubActions.dance, ClubActions.buyDrink),""),
-            new StatsModification()
+            new StatsModification(
+                    1,
+                    -3,
+                    null,
+                    -200,
+                    5,
+                    null,
+                    null,
+                    0,
+                    0
+            )
     );
     private static final Action talkAfterDance = new Action(
-            "Porozmawiaj z daną osobą",
-            "Prowadzicie miłą rozmowe i poznana osoba mile opowiada o sobie",
+            "Porozmawiajmy",
+            "Poznaliśmy się tańcząc w klubie, od razu konwersacja zczełą się kleić, powiedz coś więcej o sobie",
             ClubActions::chooseToAddContact,
-            new StatsModification()
+            new StatsModification(
+                    0,
+                    0,
+                    null,
+                    0,
+                    5,
+                    null,
+                    null,
+                    0,
+                    0
+            )
     );
     private static final Action leave = new Action("Wyjdź", "Wychodzisz z klubu", null, new StatsModification());
 
 
     private static ActionResult chooseToAddContact() {
         List<Action> actions = Arrays.asList(
-                new Action("Zapisz kontakt", "", null, new StatsModification()),
+                new Action("Zapisz kontakt", "", null, new StatsModification(
+                        0,
+                        0,
+                        null,
+                        0,
+                        0,
+                        null,
+                        null,
+                        10,
+                        0
+                )),
                 leave
         );
 

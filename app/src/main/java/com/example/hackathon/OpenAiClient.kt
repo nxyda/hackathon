@@ -16,6 +16,8 @@ object OpenAIClient {
         .ignoreIfMalformed()
         .ignoreIfMissing()
         .load()
+
+    private var API_KEY = R.string.api_key
     private const val BASE_URL = "https://api.openai.com/v1/responses"
     private val client = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS) // czas na połączenie
@@ -65,7 +67,7 @@ object OpenAIClient {
         Log.d("NPC_DEBUG", "API_KEY = $API_KEY")
 
         val chatRequest = ChatRequest(
-            model = "gpt-5-mini",
+            model = "gpt-5-nano",
             input = messages,
             instructions = instructions
 
@@ -91,7 +93,6 @@ object OpenAIClient {
             return
         }
 
-//        Log.e("NPC_DEBUG", "LOL")
         client.newCall(request).enqueue(object : Callback {
             override fun onFailure(call: Call, e: IOException) {
                 e.printStackTrace()
@@ -103,7 +104,6 @@ object OpenAIClient {
             override fun onResponse(call: Call, response: Response) {
                 Log.d("NPC_DEBUG", "IDK" + response.code)
                 if (!response.isSuccessful) {
-                    Log.e("NPC_DEBUG", "Request failed: ${response.code}")
                     callback(null)
                     return
                 }
@@ -111,9 +111,7 @@ object OpenAIClient {
                 response.body?.string()?.let { json ->
                     try {
                         val responseAdapter = moshi.adapter(ChatResponse::class.java)
-                        Log.d("NPC_DEBUG",json)
                         val chatResponse = responseAdapter.fromJson(json)
-                        Log.d("NPC_DEBUG", "Chyba działa ${chatResponse}")
                         callback(chatResponse)
                     } catch (e: Exception) {
                         Log.e("NPC_DEBUG", "JESON ERRor ${e.message}")

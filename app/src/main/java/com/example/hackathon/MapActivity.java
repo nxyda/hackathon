@@ -9,6 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hackathon.buildings.Building;
 import com.example.hackathon.buildings.BuildingBank;
+import com.example.hackathon.buildings.BuildingClub;
+import com.example.hackathon.buildings.BuildingOffice;
+import com.example.hackathon.buildings.BuildingPark;
+
+import com.example.hackathon.buildings.Building;
+import com.example.hackathon.buildings.BuildingBank;
 import com.example.hackathon.buildings.BuildingOffice;
 
 import java.util.List;
@@ -63,13 +69,13 @@ public class MapActivity extends AppCompatActivity {
 //                new BuildingCinema(),
 //                new BuildingTheatre(),
 //                new BuildingBar(),
-//                new BuildingClub(),
+                new BuildingClub(),
 //                new BuildingApartment(),
                 new BuildingOffice(),
 //                new BuildingHouse(),
 //                new BuildingGym(),
 //                new BuildingRestaurant(),
-//                new BuildingPark(),
+                new BuildingPark(),
 //                new BuildingStadium()
         };
 
@@ -93,7 +99,7 @@ public class MapActivity extends AppCompatActivity {
     }
 
     private void moveHome() {
-        if ("House".equals(player.getLive())) {
+        if ("House".equals(Postac.live)) {
             playerImageView.setX(60f);
             playerImageView.setY(270f);
         } else {

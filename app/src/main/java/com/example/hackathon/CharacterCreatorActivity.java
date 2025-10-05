@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hackathon.models.EducationEnum;
+import com.example.hackathon.models.GenderEnum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,18 +59,18 @@ public class CharacterCreatorActivity extends AppCompatActivity {
         ImageView kobietaImage = findViewById(R.id.kobeita_image);
 
         if (isGreen(mezczyznaImage)) {
-            player.setGender('M');
+            Postac.gender = GenderEnum.MALE;
         } else if (isGreen(kobietaImage)) {
-            player.setGender('K');
+            Postac.gender = GenderEnum.FEMALE;
         }
 
         ImageView srednieImage = findViewById(R.id.srednie_image);
         ImageView wyzszeImage = findViewById(R.id.wyzsze_image);
 
         if (isGreen(srednieImage)) {
-            player.setEducation(EducationEnum.valueOf("Średnie"));
+            Postac.education = EducationEnum.Srednia;
         } else if (isGreen(wyzszeImage)) {
-            player.setEducation(EducationEnum.valueOf("Wyższe"));
+            Postac.education = EducationEnum.Wysoka;
         }
 
 
@@ -84,12 +85,9 @@ public class CharacterCreatorActivity extends AppCompatActivity {
         if (isGreen(findViewById(R.id.filmy_image))) hobbys.add("Filmy");
         if (isGreen(findViewById(R.id.literatura_image))) hobbys.add("Literatura");
 
-        player.setHobbys(hobbys);
-
-
+        Postac.hobbys = hobbys;
 
         Intent intent = new Intent(this, MapActivity.class);
-        intent.putExtra("playerObj", player);
         startActivity(intent);
     }
 

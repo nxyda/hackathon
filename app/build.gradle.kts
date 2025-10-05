@@ -1,15 +1,22 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+
 }
 
 android {
+
     namespace = "com.example.hackathon"
     compileSdk = 34
 
+    val properties = Properties()
+    properties.load(project.rootProject.file("local.properties").inputStream())
 
     defaultConfig {
+        resValue("string", "api_key", properties.getProperty("api.key", ""))
         applicationId = "com.example.hackathon"
         minSdk = 24
         targetSdk = 34
@@ -62,3 +69,4 @@ dependencies {
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
 }
+

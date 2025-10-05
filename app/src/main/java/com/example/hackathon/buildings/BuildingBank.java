@@ -1,7 +1,7 @@
 package com.example.hackathon.buildings;
 
 import com.example.hackathon.actions.Action;
-import com.example.hackathon.models.StatsModification;
+import com.example.hackathon.actions.BankActions;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,9 +24,6 @@ public class BuildingBank extends Building {
 
     @Override
     public List<Action> getAction() {
-        return Arrays.asList(
-
-
-        );
+        return Arrays.asList(BankActions.getLoan, BankActions.takeDeposit);
     }
 }

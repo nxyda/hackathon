@@ -1,11 +1,12 @@
 package com.example.hackathon.buildings;
 
 import com.example.hackathon.actions.Action;
+import com.example.hackathon.actions.OfficeActions;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class BuildingOffice extends Building implements Workplace{
+public class BuildingOffice extends Building implements Workplace {
     public BuildingOffice() {
         super("Biurowiec");
     }
@@ -22,6 +23,10 @@ public class BuildingOffice extends Building implements Workplace{
 
     @Override
     public List<Action> getAction() {
-        return Arrays.asList();
+        return Arrays.asList(
+                OfficeActions.meetCoworkers,
+                OfficeActions.work,
+                OfficeActions.promotionRequest
+        );
     }
 }
