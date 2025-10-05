@@ -3,8 +3,12 @@ package com.example.hackathon;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.hackathon.models.NPC;
+import com.example.hackathon.npc.NPCManager;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,23 +16,29 @@ import java.util.List;
 public class PhoneActivity extends AppCompatActivity {
 
     private List<String> friendsList = new ArrayList<>();
-    private LinearLayout friendsContainer;
+    private ScrollView friendsContainer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone);
+        Postac player = (Postac) getIntent().getSerializableExtra("playerObj");
 
-        friendsContainer = findViewById(R.id.friends_container);
+        friendsContainer = findViewById(R.id.scroll_container);
 
+        NPCManager.generateNPCs();
 
-        displayFriends();
+        for (NPC npc : NPCManager.npcs) {
+            player.getFriends().add(npc);
+        }
+
+        displayNPCFriends();
     }
 
-    private void displayFriends() {
+    private void displayNPCFriends() {
         friendsContainer.removeAllViews();
 
-        for (String friend : friendsList) {
+        for (NPC npc : NPCManager.npcs) {
             ImageView profileImage = new ImageView(this);
             profileImage.setImageResource(R.drawable.osoba);
 
@@ -36,10 +46,10 @@ public class PhoneActivity extends AppCompatActivity {
             params.setMargins(0, 16, 0, 16);
             profileImage.setLayoutParams(params);
 
-
-            profileImage.setContentDescription(friend + " profil");
+            profileImage.setContentDescription(npc.getName() + " profil");
 
             friendsContainer.addView(profileImage);
         }
     }
+
 }

@@ -1,17 +1,18 @@
 package com.example.hackathon;
 
 import com.example.hackathon.models.EducationEnum;
-import com.example.hackathon.models.GenderEnum;
+import com.example.hackathon.models.NPC;
 
 import java.io.Serializable;
 import java.util.List;
 
 public class Postac implements Serializable {
+    public static int maxPoints;
     private String name;
-    private GenderEnum gender;
+    private char gender;
     private int health;
     private int age;
-    private String education;
+    private EducationEnum education;
     private String carer;
     private int income;
     private int money;
@@ -24,7 +25,7 @@ public class Postac implements Serializable {
     private List<String> hobbys;
 
     // inni ludzie
-    private List<Postac> friends;
+    private List<NPC> friends;
 
     public Postac() {
         this.health = 100;
@@ -32,7 +33,7 @@ public class Postac implements Serializable {
         this.money = 1000;
         this.age = 18;
     }
-//
+
     public String getName() {
         return name;
     }
@@ -41,11 +42,11 @@ public class Postac implements Serializable {
         this.name = name;
     }
 
-    public GenderEnum getGender() {
+    public char getGender() {
         return gender;
     }
 
-    public void setGender(GenderEnum gender) {
+    public void setGender(char gender) {
         this.gender = gender;
     }
 
@@ -61,8 +62,7 @@ public class Postac implements Serializable {
 
     public void setAge(int age) {}
 
-    public String getEducation() {
-        () {
+    public EducationEnum getEducation() {
         return education;
     }
 
@@ -126,11 +126,11 @@ public class Postac implements Serializable {
         this.hobbys = hobbys;
     }
 
-    public List<Postac> getFriends() {
+    public List<NPC> getFriends() {
         return friends;
     }
 
-    public void setFriends(List<Postac> friends) {
+    public void setFriends(List<NPC> friends) {
         this.friends = friends;
     }
 
@@ -160,9 +160,4 @@ public class Postac implements Serializable {
         if (this.money < 0) this.money = 0;
 
     }
-
 }
-
-
-
-

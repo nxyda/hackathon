@@ -7,6 +7,8 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.hackathon.models.EducationEnum;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -65,9 +67,9 @@ public class CharacterCreatorActivity extends AppCompatActivity {
         ImageView wyzszeImage = findViewById(R.id.wyzsze_image);
 
         if (isGreen(srednieImage)) {
-            player.setEducation("Średnie");
+            player.setEducation(EducationEnum.valueOf("Średnie"));
         } else if (isGreen(wyzszeImage)) {
-            player.setEducation("Wyższe");
+            player.setEducation(EducationEnum.valueOf("Wyższe"));
         }
 
 
