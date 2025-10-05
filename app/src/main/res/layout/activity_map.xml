@@ -7,119 +7,160 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/map_v1" />
+        android:src="@drawable/map_v2"
+        />
 
     <Button
         android:id="@+id/button_szpital"
         android:layout_width="76dp"
+        android:text=""
         android:layout_height="61dp"
         android:layout_marginLeft="128dp"
         android:layout_marginTop="10dp"
-        android:visibility="invisible"/>
+        android:contentDescription="Szpital"
+        android:background="@android:color/transparent"/>
 
     <Button
         android:id="@+id/button_uczelnia"
         android:layout_width="77dp"
+        android:text=""
+        android:contentDescription="Szpital"
+
         android:layout_height="wrap_content"
         android:layout_marginLeft="240dp"
         android:layout_marginTop="10dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_zus"
+        android:contentDescription="Szpital"
+
         android:layout_width="71dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="350dp"
+        android:text=""
         android:layout_marginTop="10dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_galeria"
         android:layout_width="71dp"
         android:layout_height="58dp"
+        android:contentDescription="Szpital"
+
+        android:text=""
         android:layout_marginLeft="470dp"
         android:layout_marginTop="6dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_bank"
         android:layout_width="73dp"
+        android:text=""
         android:layout_height="58dp"
+        android:contentDescription="Szpital"
         android:layout_marginLeft="548dp"
         android:layout_marginTop="64dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_kino"
         android:layout_width="73dp"
         android:layout_height="56dp"
+        android:text=""
+        android:contentDescription="Szpital"
+
         android:layout_marginLeft="548dp"
         android:layout_marginTop="144dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_teatr"
         android:layout_width="67dp"
+        android:text=""
         android:layout_height="wrap_content"
         android:layout_marginLeft="480dp"
         android:layout_marginTop="200dp"
-        android:visibility="invisible" />
+        android:contentDescription="Szpital"
+
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_bar"
         android:layout_width="62dp"
         android:layout_height="56dp"
+        android:contentDescription="Szpital"
+
+        android:text=""
         android:layout_marginLeft="410dp"
         android:layout_marginTop="210dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_klub"
+        android:text=""
+        android:contentDescription="Szpital"
+
         android:layout_width="62dp"
         android:layout_height="60dp"
         android:layout_marginLeft="330dp"
         android:layout_marginTop="220dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_mieszkanie"
         android:layout_width="62dp"
+        android:contentDescription="Szpital"
+
         android:layout_height="70dp"
+        android:text=""
         android:layout_marginLeft="250dp"
         android:layout_marginTop="210dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_biurowiec"
+        android:text=""
         android:layout_width="102dp"
-        android:layout_height="70dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginTop="210dp"
-        android:visibility="invisible" />
+        android:layout_height="90dp"
+        android:contentDescription="Szpital"
+
+        android:layout_marginLeft="148dp"
+        android:layout_marginTop="190dp"
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_dom"
         android:layout_width="64dp"
-        android:layout_height="64dp"
+        android:text=""
+        android:layout_height="70dp"
+        android:contentDescription="Szpital"
+
         android:layout_marginLeft="80dp"
-        android:layout_marginTop="330dp"
-        android:visibility="invisible" />
+        android:layout_marginTop="320dp"
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_silownia"
         android:layout_width="70dp"
+        android:text=""
         android:layout_height="62dp"
+        android:contentDescription="Szpital"
+
         android:layout_marginLeft="156dp"
         android:layout_marginTop="350dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_restauracja"
-        android:layout_width="96dp"
+        android:layout_width="108dp"
+        android:text=""
         android:layout_height="62dp"
-        android:layout_marginLeft="240dp"
+        android:layout_marginLeft="250dp"
+        android:contentDescription="Szpital"
+
         android:layout_marginTop="350dp"
-        android:visibility="invisible" />
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_park"
@@ -127,15 +168,21 @@
         android:layout_height="68dp"
         android:layout_marginLeft="380dp"
         android:layout_marginTop="342dp"
-        android:visibility="invisible" />
+        android:contentDescription="Szpital"
+
+        android:text=""
+        android:background="@android:color/transparent" />
 
     <Button
         android:id="@+id/button_stadion"
+        android:text=""
         android:layout_width="130dp"
         android:layout_height="80dp"
+
         android:layout_marginLeft="520dp"
         android:layout_marginTop="328dp"
-        android:visibility="invisible" />
+        android:contentDescription="Szpital"
+        android:background="@android:color/transparent" />
 
 
     <ImageView
@@ -145,9 +192,103 @@
         android:layout_gravity="top|left"
         android:layout_marginLeft="250dp"
         android:layout_marginTop="240dp"
-        android:src="@drawable/human" />
+        android:src="@drawable/male_happy" />
+
+    <TextView
+        android:id="@+id/money"
+        android:textStyle="bold"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:text="Money: \n1000 zł" />
+
+    <TextView
+        android:id="@+id/zdrowie"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Zdrowie:" />
+
+    <TextView
+        android:id="@+id/zdrowie_punkty"
+        android:textStyle="bold"
+        android:layout_marginTop="60dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100" />
+
+    <TextView
+        android:id="@+id/szczescie"
+        android:textStyle="bold"
+        android:layout_marginTop="80dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Szczęście:" />
+
+    <TextView
+        android:id="@+id/szczescie_punkty"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="100" />
+
+    <TextView
+        android:id="@+id/tury"
+        android:textStyle="bold"
+        android:layout_marginTop="120dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tury:" />
+
+    <TextView
+        android:id="@+id/tury_punkty"
+        android:textStyle="bold"
+        android:layout_marginTop="140dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="24" />
+
+    <TextView
+        android:id="@+id/wiek"
+        android:textStyle="bold"
+        android:layout_marginTop="160dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wiek:" />
+
+    <TextView
+        android:id="@+id/wiek_punkty"
+        android:textStyle="bold"
+        android:layout_marginTop="180dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="18" />
+
+    <ImageView
+        android:id="@+id/phone"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="340dp"
+        android:contentDescription="Phone icon"
+        android:clickable="true"
+        android:focusable="true"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/phone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 
+    <Button
+        android:id="@+id/button_phone"
+        android:layout_width="50dp"
+        android:layout_height="68dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="338dp"
+        android:contentDescription="Telefon"
+        android:text=""
+        android:background="@android:color/transparent" />
 
 
 </FrameLayout>

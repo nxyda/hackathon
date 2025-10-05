@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="324dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/male_happy" />
+
+    <TextView
+        android:id="@+id/plec"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Płeć"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="Hobby"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248dp"
+        android:text="Wykształcenie"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="328dp"
+        android:text="Osobowość"
+        app:layout_constraintEnd_toStartOf="@+id/imageView2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mezczyzna_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:translationX="2dp"
+        tools:translationY="0dp" />
+
+    <ImageView
+        android:id="@+id/literatura_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:translationX="2dp"
+        tools:translationY="51dp" />
+
+    <ImageView
+        android:id="@+id/nauka_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:translationX="176dp"
+        tools:translationY="83dp" />
+
+    <ImageView
+        android:id="@+id/muzyka_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="1dp"
+        tools:translationY="113dp" />
+
+    <ImageView
+        android:id="@+id/internet_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:translationX="176dp"
+        android:translationY="113dp" />
+
+
+    <ImageView
+        android:id="@+id/majsterkowanie_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="2dp"
+        tools:translationY="149dp" />
+
+    <ImageView
+        android:id="@+id/gotowanie_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="176dp"
+        tools:translationY="149dp" />
+
+    <ImageView
+        android:id="@+id/inwestowanie_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:translationX="1dp"
+        tools:translationY="196dp" />
+
+    <ImageView
+        android:id="@+id/ekstrawertyk_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:translationX="-5dp"
+        tools:translationY="328dp" />
+
+    <ImageView
+        android:id="@+id/zawodowe_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="96dp"
+        tools:translationY="262dp" />
+
+    <ImageView
+        android:id="@+id/wyzsze_image"
+        android:layout_width="147dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="195dp"
+        tools:translationY="262dp" />
+
+    <ImageView
+        android:id="@+id/srednie_image"
+        android:layout_width="147dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="-5dp"
+        tools:translationY="262dp" />
+
+    <ImageView
+        android:id="@+id/filmy_image"
+        android:layout_width="147dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="176dp"
+        tools:translationY="196dp" />
+
+    <ImageView
+        android:id="@+id/introwertyk_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="176dp"
+        tools:translationY="328dp" />
+
+    <ImageView
+        android:id="@+id/sztuka_image"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="2dp"
+        tools:translationY="83dp" />
+
+    <ImageView
+        android:id="@+id/sport_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="176dp"
+        tools:translationY="51dp" />
+
+    <ImageView
+        android:id="@+id/kobeita_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="177dp"
+        tools:translationY="0dp" />
+
+    <Button
+        android:id="@+id/mezczyzna"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Mężcyzna"
+        android:background="@android:color/transparent"
+        tools:translationX="26dp"
+        tools:translationY="18dp" />
+
+    <Button
+        android:id="@+id/kobieta"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Kobieta"
+        android:background="@android:color/transparent"
+        tools:translationX="199dp"
+        tools:translationY="18dp" />
+
+    <Button
+        android:id="@+id/sport"
+        android:background="@android:color/transparent"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        android:text="Sport"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:translationX="199dp"
+        tools:translationY="68dp" />
+
+    <Button
+        android:id="@+id/nauka"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Nauka"
+        android:background="@android:color/transparent"
+        tools:translationX="199dp"
+        tools:translationY="100dp" />
+
+    <Button
+        android:id="@+id/sztuka"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Sztuka"
+        android:background="@android:color/transparent"
+        tools:translationX="26dp"
+        tools:translationY="100dp" />
+
+    <Button
+        android:id="@+id/muzyka"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        android:text="Muzyka"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:color/transparent"
+        tools:translationX="26dp"
+        tools:translationY="129dp" />
+
+    <Button
+        android:id="@+id/internet"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="Internet"
+        android:background="@android:color/transparent"
+        tools:translationX="199dp"
+        tools:translationY="129dp" />
+
+    <Button
+        android:id="@+id/gotowanie"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        android:text="Gotowanie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@android:color/transparent"
+        tools:translationX="199dp"
+        tools:translationY="166dp" />
+
+<!--    <Button-->
+<!--        android:id="@+id/majsterkowanie"-->
+<!--        android:layout_width="90dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:textSize="8dp"-->
+<!--        android:text="Majsterkowanie"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        tools:translationX="26dp"-->
+<!--        tools:translationY="167dp" />-->
+
+<!--    <Button-->
+<!--        android:id="@+id/inwestowanie"-->
+<!--        android:layout_width="90dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:textSize="10dp"-->
+<!--        android:text="Inwestowanie"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:contentDescription="Inwestowanie"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginStart="26dp"-->
+<!--        android:layout_marginTop="216dp"/>-->
+
+
+    <Button
+        android:id="@+id/srednie"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        android:text="Średnie"
+        android:background="@android:color/transparent"
+        tools:translationX="16dp"
+        tools:translationY="280dp" />
+
+<!--    <Button-->
+<!--        android:id="@+id/zawodowe"-->
+<!--        android:layout_width="90dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:textSize="10dp"-->
+<!--        android:text="Zawodowe"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        tools:translationX="119dp"-->
+<!--        tools:translationY="280dp" />-->
+
+    <Button
+        android:id="@+id/wyzsze"
+        android:layout_width="90dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="48dp"
+        android:text="Wyższe"
+        android:background="@android:color/transparent"
+        tools:translationX="218dp"
+        tools:translationY="280dp" />
+
+<!--    <Button-->
+<!--        android:id="@+id/introwertyk"-->
+<!--        android:layout_width="90dp"-->
+<!--        android:layout_height="60dp"-->
+<!--        android:text="Introwertyk"-->
+<!--        android:textSize="10dp"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        android:contentDescription="Introwertyk"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:layout_marginStart="199dp"-->
+<!--        android:layout_marginTop="342dp"/>-->
+
+<!--    <Button-->
+<!--        android:id="@+id/ekstrawertyk"-->
+<!--        android:layout_width="90dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        android:textSize="8dp"-->
+<!--        android:layout_height="48dp"-->
+<!--        android:text="Ekstrawertyk"-->
+<!--        android:background="@android:color/transparent"-->
+<!--        tools:translationX="16dp"-->
+<!--        tools:translationY="348dp" />-->
+
+    <Button
+        android:id="@+id/filmy"
+        android:layout_width="88dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:text="Filmy"
+        tools:translationX="199dp"
+        tools:translationY="212dp" />
+
+    <Button
+        android:id="@+id/literatura"
+        android:layout_width="90dp"
+        android:layout_height="48dp"
+        android:text="Literatura"
+        android:background="@android:color/transparent"
+        android:contentDescription="Literatura"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="-226dp"/>
+
+    <Button
+        android:id="@+id/dalej"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dalej"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.681"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.925" />
+
+    <ImageView
+        android:id="@+id/dalej_image"
+        android:layout_width="147dp"
+        android:layout_height="113dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/button_yellow"
+        tools:translationX="415dp"
+        tools:translationY="316dp" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
