@@ -54,6 +54,7 @@ public class TimeService {
                         .setFriendship(change.getNpc()
                                 .getRelation()
                                 .getFriendship() + change.getFriendshipChange());
+                Postac.friends.add(change.getNpc());
             }
 
             Postac.money += change.getIncome();

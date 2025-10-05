@@ -22,15 +22,12 @@ public class PhoneActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_phone);
-        Postac player = (Postac) getIntent().getSerializableExtra("playerObj");
 
         friendsContainer = findViewById(R.id.scroll_container);
 
         NPCManager.generateNPCs();
 
-        for (NPC npc : NPCManager.npcs) {
-            player.getFriends().add(npc);
-        }
+        Postac.friends.addAll(NPCManager.npcs);
 
         displayNPCFriends();
     }

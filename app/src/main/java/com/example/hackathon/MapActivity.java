@@ -82,7 +82,6 @@ public class MapActivity extends AppCompatActivity {
             Button b = findViewById(buttonIds[i]);
             b.setOnClickListener(v -> {
                 Intent intent = new Intent(MapActivity.this, DialogActivity.class);
-                intent.putExtra("playerObj", player);
                 intent.putExtra("buildingObj", buildings[index]);
                 startActivity(intent);
             });
@@ -91,13 +90,12 @@ public class MapActivity extends AppCompatActivity {
         ImageView phoneButton = findViewById(R.id.phone);
         phoneButton.setOnClickListener(v -> {
             Intent intent = new Intent(MapActivity.this, PhoneActivity.class);
-            intent.putExtra("playerObj", player);
             startActivity(intent);
         });
     }
 
     private void moveHome() {
-        if ("House".equals(player.getLive())) {
+        if ("House".equals(Postac.live)) {
             playerImageView.setX(60f);
             playerImageView.setY(270f);
         } else {
