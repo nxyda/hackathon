@@ -52,24 +52,23 @@ public class CharacterCreatorActivity extends AppCompatActivity {
     }
 
     private void nextScreen() {
-        Postac player = new Postac();
 
         ImageView mezczyznaImage = findViewById(R.id.mezczyzna_image);
         ImageView kobietaImage = findViewById(R.id.kobeita_image);
 
         if (isGreen(mezczyznaImage)) {
-            player.setGender(GenderEnum.MALE);
+            Postac.gender = GenderEnum.MALE;
         } else if (isGreen(kobietaImage)) {
-            player.setGender(GenderEnum.FEMALE);
+            Postac.gender = GenderEnum.FEMALE;
         }
 
         ImageView srednieImage = findViewById(R.id.srednie_image);
         ImageView wyzszeImage = findViewById(R.id.wyzsze_image);
 
         if (isGreen(srednieImage)) {
-            player.setEducation(EducationEnum.Srednia);
+            Postac.education = EducationEnum.Srednia;
         } else if (isGreen(wyzszeImage)) {
-            player.setEducation(EducationEnum.Wysoka);
+            Postac.education = EducationEnum.Wysoka;
         }
 
 
@@ -84,12 +83,9 @@ public class CharacterCreatorActivity extends AppCompatActivity {
         if (isGreen(findViewById(R.id.filmy_image))) hobbys.add("Filmy");
         if (isGreen(findViewById(R.id.literatura_image))) hobbys.add("Literatura");
 
-        player.setHobbys(hobbys);
-
-
+        Postac.hobbys = hobbys;
 
         Intent intent = new Intent(this, MapActivity.class);
-        intent.putExtra("playerObj", player);
         startActivity(intent);
     }
 

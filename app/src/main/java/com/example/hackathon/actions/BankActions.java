@@ -1,6 +1,9 @@
 package com.example.hackathon.actions;
 
+import static java.lang.Math.pow;
+
 import com.example.hackathon.models.StatsModification;
+import com.example.hackathon.services.TimeService;
 
 import java.util.Arrays;
 
@@ -9,19 +12,19 @@ public class BankActions {
             "Chcę 20000zł",
             "",
             null,
-            new StatsModification()
+            new StatsModification(0, 0, null, 20000, 0, null, null, 0, 0)
     );
     private static final Action getLoan5000 = new Action(
             "Chcę 5000zł",
             "",
             () -> new ActionResult(Arrays.asList(BankActions.getLoan, BankActions.takeDeposit), ""),
-            new StatsModification()
+            new StatsModification(0, 0, null, 5000, 0, null, null, 0, 0)
     );
     private static final Action getLoan50000 = new Action(
             "Chcę 50000zł",
             "",
             () -> new ActionResult(Arrays.asList(BankActions.getLoan, BankActions.takeDeposit), ""),
-            new StatsModification()
+            new StatsModification(0, 0, null, 50000, 0, null, null, 0, 0)
     );
     private static final Action getNoneLoan = new Action(
             "Wycofuje się",
@@ -33,19 +36,49 @@ public class BankActions {
             "Wpłacę 1000zł",
             "",
             () -> new ActionResult(Arrays.asList(BankActions.getLoan, BankActions.takeDeposit), ""),
-            new StatsModification()
+            new StatsModification(
+                    0,
+                    0,
+                    null,
+                    (int) Math.floor(1000 * pow(1.4, TimeService.AGE_STEP)),
+                    0,
+                    null,
+                    null,
+                    0,
+                    0
+            )
     );
     private static final Action takeDeposit5000 = new Action(
             "Wpłacę 5000zł",
             "",
             () -> new ActionResult(Arrays.asList(BankActions.getLoan, BankActions.takeDeposit), ""),
-            new StatsModification()
+            new StatsModification(
+                    5000,
+                    0,
+                    null,
+                    (int) Math.floor(5000 * pow(1.4, TimeService.AGE_STEP)),
+                    0,
+                    null,
+                    null,
+                    0,
+                    0
+            )
     );
     private static final Action takeDeposit10000 = new Action(
             "Wpłacę 10000 zł",
             "",
             () -> new ActionResult(Arrays.asList(BankActions.getLoan, BankActions.takeDeposit), ""),
-            new StatsModification()
+            new StatsModification(
+                    10000,
+                    0,
+                    null,
+                    (int) Math.floor(10000 * pow(1.4, TimeService.AGE_STEP)),
+                    0,
+                    null,
+                    null,
+                    0,
+                    0
+            )
     );
     private static final Action takeNonDeposit = new Action(
             "Wycofuje się",

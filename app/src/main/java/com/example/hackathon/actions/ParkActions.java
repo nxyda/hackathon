@@ -7,6 +7,16 @@ public class ParkActions {
             "Choćmy na spacer",
             "Spotykamy się we dwoje w parku i zapraszam cię na spacer",
             null,
-            new StatsModification()
+            new StatsModification(
+                    2,
+                    3,
+                    null,
+                    -100,
+                    6,
+                    null,
+                    null,
+                    10,
+                    3
+            )
     );
 }

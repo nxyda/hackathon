@@ -7,8 +7,8 @@ data class NPC(
     val name: String,
     val job: String,
     val type: String,
-    val relation: Relation,
-    val actions: List<Action>,
+     val relation: Relation,
+     val actions: List<Action>,
     val gender: GenderEnum
 )
 
