@@ -32,7 +32,7 @@ public class Postac implements Serializable {
         this.money = 1000;
         this.age = 18;
     }
-
+//
     public String getName() {
         return name;
     }
