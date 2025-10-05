@@ -11,6 +11,7 @@ public class Postac implements Serializable {
     private String name;
     private GenderEnum gender;
     private int health;
+    private int age;
     private EducationEnum education;
     private String carer;
     private int income;
@@ -19,11 +20,19 @@ public class Postac implements Serializable {
     private int retiring;
     private int successPoint;
     private String live;
+    private String personality;
 
     private List<String> hobbys;
 
     // inni ludzie
     private List<Postac> friends;
+
+    public Postac() {
+        this.health = 100;
+        this.happiness = 100;
+        this.money = 1000;
+        this.age = 18;
+    }
 
     public String getName() {
         return name;
@@ -48,6 +57,10 @@ public class Postac implements Serializable {
     public void setHealth(int health) {
         this.health = health;
     }
+
+    public int getAge() {return age;}
+
+    public void setAge(int age) {}
 
     public EducationEnum getEducation() {
         return education;
@@ -129,5 +142,22 @@ public class Postac implements Serializable {
         this.live = live;
     }
 
-}
+    public String getPersonality() {return personality;}
 
+    public void setPersonality(String personality) {this.personality = personality;}
+
+    public void applyEvent(Event event) {
+
+        this.health += event.getHealth();
+        if (this.health > 100) this.health = 100;
+        if (this.health < 0) this.health = 0;
+
+        this.happiness += event.getHappiness();
+        if (this.happiness > 100) this.happiness = 100;
+        if (this.happiness < 0) this.happiness = 0;
+
+        this.money += event.getMoney();
+        if (this.money < 0) this.money = 0;
+
+    }
+}

@@ -8,6 +8,7 @@ android {
     namespace = "com.example.hackathon"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "com.example.hackathon"
         minSdk = 24

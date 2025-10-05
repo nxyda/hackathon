@@ -11,6 +11,9 @@ import com.example.hackathon.buildings.Building;
 import com.example.hackathon.buildings.BuildingBank;
 import com.example.hackathon.buildings.BuildingOffice;
 
+import java.util.List;
+import java.util.Random;
+
 public class MapActivity extends AppCompatActivity {
 
     private ImageView playerImageView;
@@ -25,6 +28,10 @@ public class MapActivity extends AppCompatActivity {
         player = (Postac) getIntent().getSerializableExtra("playerObj");
 
         moveHome();
+
+        List<Event> events = GameEvents.getAllEvents();
+        Event losowy = events.get(new Random().nextInt(events.size()));
+
 
         // przyciski mapy
         int[] buttonIds = {
@@ -76,6 +83,13 @@ public class MapActivity extends AppCompatActivity {
                 startActivity(intent);
             });
         }
+
+        ImageView phoneButton = findViewById(R.id.phone);
+        phoneButton.setOnClickListener(v -> {
+            Intent intent = new Intent(MapActivity.this, PhoneActivity.class);
+            intent.putExtra("playerObj", player);
+            startActivity(intent);
+        });
     }
 
     private void moveHome() {
