@@ -28,6 +28,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.hackathon.actions.Action
+import com.example.hackathon.actions.ActionResult
 import com.example.hackathon.buildings.Building
 import com.example.hackathon.buildings.BuildingClub
 import com.example.hackathon.models.NPC
@@ -54,11 +55,14 @@ class DialogActivity : ComponentActivity() {
                 NpcDialogScreen(
                     npcName = npc.name, npcImage = R.drawable.jpg, // daj swój obrazek w drawable
                     dialogOptions = actions, onOptionSelected = { option ->
+                        actions = ArrayList<Action>()
+                        if(option.nextActionChooser != null) {
+                            val actionResult = option.nextActionChooser.invoke()
+                            actions = actionResult.actions
+                        }
 
-                        val actionResult = option.nextActionChooser?.invoke()
-                        actions = actionResult?.actions
                         getResponse(npc, option) { newText ->
-                            npcText = newText + "\n" + actionResult?.description
+                            npcText = newText
                         }
                     },
 
@@ -134,8 +138,10 @@ fun NpcDialogScreen(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Button(onClick = { onOptionSelected(dialogOptions[0]) }) {
-                        Text(dialogOptions[0].visibleName)
+                    if (dialogOptions.isNotEmpty()) {
+                        Button(onClick = { onOptionSelected(dialogOptions[0]) }) {
+                            Text(dialogOptions[0].visibleName)
+                        }
                     }
                     if (dialogOptions.size > 1) {
                         Button(onClick = { onOptionSelected(dialogOptions[1]) }) {
@@ -168,22 +174,6 @@ fun NpcDialogScreen(
             text = currentText,
             modifier = Modifier.padding(8.dp),
             style = MaterialTheme.typography.bodyLarge
-        )
-    }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    HackathonTheme {
-        var npcText by remember { mutableStateOf("Witaj podróżniku!") }
-
-        NpcDialogScreen(
-            npcName = "Strażnik", npcImage = R.drawable.jpg, // daj swój obrazek w drawable
-            dialogOptions = listOf(), onOptionSelected = { option ->
-                npcText = "NPC odpowiada na: $option"
-            }, currentText = npcText
         )
     }
 }

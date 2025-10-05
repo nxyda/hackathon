@@ -19,7 +19,7 @@ public class ClubActions {
     public static final Action buyDrink = new Action(
             "Kup drinka",
             "Kupujesz i wypijasz drinka",
-            null,
+            () -> new ActionResult(Arrays.asList(ClubActions.dance, ClubActions.buyDrink),""),
             new StatsModification()
     );
     private static final Action talkAfterDance = new Action(

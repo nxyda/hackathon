@@ -8,5 +8,5 @@ enum class RelationTraitEnum {
     LOYAL,          // stabilny w przyjaźni i romansie
     CHAOTIC,        // zachowuje się losowo, trudny do przewidzenia
     GREEDY,         // relacje zależne od korzyści
-    WISE            // doradza, stabilizuje innych NPC
+    WISE,            // doradza, stabilizuje innych NPC
 }

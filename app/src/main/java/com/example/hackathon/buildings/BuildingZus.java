@@ -16,6 +16,11 @@ public class BuildingZus extends Building{
     }
 
     @Override
+    public int getWorkersNumber() {
+        return 5;
+    }
+
+    @Override
     public List<Action> getAction() {
         return Arrays.asList();
     }

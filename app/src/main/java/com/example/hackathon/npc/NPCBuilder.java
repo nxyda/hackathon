@@ -25,6 +25,39 @@ public class NPCBuilder {
         return _id++;
     }
 
+    public static NPC buildBasic(String job, String typ, List<Action> jobActions) {
+        String[] names = {
+                "Eryk", "Mira", "Tomasz", "Lena",
+                 "Iga", "Borys", "Zofia",
+                "Piotr", "Natalia", "Ania", "Bartek",
+                "Maks", "Małgorzata", "Olek",
+                "Adam", "Agnieszka", "Kacper", "Marcelina", "Olaf"
+        };
+
+        String name = names[random.nextInt(names.length)];
+        GenderEnum gender = GenderEnum.MALE;
+        if (name.toCharArray()[name.length() - 1] == 'a') {
+            gender = GenderEnum.FEMALE;
+        }
+
+        int romantic = 0;
+        int friendship = 0;
+        RelationTraitEnum trait = RelationTraitEnum.getEntries()
+                .get(random.nextInt(RelationTraitEnum.values().length));
+        Relation relation = new Relation(romantic, friendship, trait);
+
+
+        return new NPCBuilder()
+                .setId(get_next_id())
+                .setName(name)
+                .setJob(job)
+                .setType(typ)
+                .setRelation(relation)
+                .setActions(jobActions)
+                .setGender(gender)
+                .build();
+    }
+
     public NPCBuilder setId(int id) {
         this.id = id;
         return this;
@@ -44,6 +77,7 @@ public class NPCBuilder {
         this.type = type;
         return this;
     }
+
     public NPCBuilder setGender(GenderEnum gender) {
         this.gender = gender;
         return this;
@@ -68,32 +102,5 @@ public class NPCBuilder {
 
         return new NPC(id, name, job, type, relation, actions, gender);
 
-    }
-
-    public static NPC buildBasic(String job, String typ, List<Action> jobActions) {
-        String[] names = {"Eryk", "Mira", "Tomasz", "Lena", "Ragnar", "Iga", "Borys", "Zofia", "Piotr", "Natalia", "Ania"};
-
-
-        String name = names[random.nextInt(names.length)];
-        GenderEnum gender = GenderEnum.MALE;
-        if(name.toCharArray()[name.length() - 1] == 'a'){
-            gender = GenderEnum.FEMALE;
-        }
-
-        int romantic = 0;
-        int friendship = 0;
-        RelationTraitEnum trait = RelationTraitEnum.getEntries().get(random.nextInt(RelationTraitEnum.values().length));
-        Relation relation = new Relation(romantic, friendship, trait);
-
-
-        return new NPCBuilder()
-                .setId(get_next_id())
-                .setName(name)
-                .setJob(job)
-                .setType(typ)
-                .setRelation(relation)
-                .setActions(jobActions)
-                .setGender(gender)
-                .build();
     }
 }

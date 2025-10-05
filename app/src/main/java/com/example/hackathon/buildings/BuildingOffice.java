@@ -16,6 +16,11 @@ public class BuildingOffice extends Building implements Workplace{
     }
 
     @Override
+    public int getWorkersNumber() {
+        return 5;
+    }
+
+    @Override
     public List<Action> getAction() {
         return Arrays.asList();
     }
