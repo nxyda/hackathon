@@ -16,7 +16,6 @@ object OpenAIClient {
         .ignoreIfMalformed()
         .ignoreIfMissing()
         .load()
-
     private const val BASE_URL = "https://api.openai.com/v1/responses"
     private val client = OkHttpClient.Builder()
         .connectTimeout(30, TimeUnit.SECONDS) // czas na połączenie
@@ -28,9 +27,11 @@ object OpenAIClient {
     // --- MODELS ---
     data class Message(val role: String, val content: String)
     data class ChatRequest(
-        val model: String = "gpt-4.1-nano",
+        val model: String = "gpt-5-nano",
         val input: List<Message>,
         val instructions: String?,
+        val text: TextRequest = TextRequest("high"),
+        val reasoning: ReasoningRequest = ReasoningRequest("minimal")
     )
     data class ChatResponse(
         val id: String,
@@ -67,6 +68,7 @@ object OpenAIClient {
             model = "gpt-5-mini",
             input = messages,
             instructions = instructions
+
         )
 
         val jsonAdapter = moshi.adapter(ChatRequest::class.java)
@@ -124,3 +126,11 @@ object OpenAIClient {
     }
 
 }
+
+class TextRequest (
+    val verbosity: String
+)
+class ReasoningRequest (
+    val effort: String
+)
+

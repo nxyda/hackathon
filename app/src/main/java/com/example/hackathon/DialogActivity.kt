@@ -1,7 +1,6 @@
 package com.example.hackathon
 
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -15,7 +14,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -29,26 +27,20 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.hackathon.models.Action
-import com.example.hackathon.models.NPCModel
-import com.example.hackathon.models.Relation
-import com.example.hackathon.models.RelationTrait
+import com.example.hackathon.actions.Action
+import com.example.hackathon.actions.ActionResult
+import com.example.hackathon.buildings.Building
+import com.example.hackathon.buildings.BuildingClub
+import com.example.hackathon.models.NPC
 import com.example.hackathon.ui.theme.HackathonTheme
 
 class DialogActivity : ComponentActivity() {
-    val exampleNPC = NPCModel(
-        id = -1,
-        name = "Zosia",
-        job = "Bankier",
+    val building: Building = BuildingClub()
+    val history = mutableListOf(
+        OpenAIClient.Message("system", "Jestem Piotr i jestem w ${building.name}"),
 
-        type = "Friend",
-        relation = Relation(romantic = 30, friendship = 60, trait = RelationTrait.SHY),
-        actions = listOf(
-            Action("Chciałbym wziąć kredyt", "friendship+5"),
-            Action("Chciałbym założyć lokate", "friendship+5"),
-            Action("Zainwestowałbym w obligacje", "friendship+5"),
-        ),
-    )
+        )
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -57,13 +49,18 @@ class DialogActivity : ComponentActivity() {
         setContent {
             HackathonTheme {
                 var npcText by remember { mutableStateOf("Witaj podróżniku!") }
-                val npc = exampleNPC
+                val npc = building.npc
+                var actions by remember { mutableStateOf(building.action) }
+
                 NpcDialogScreen(
-                    npcName = npc.name,
-                    npcImage = R.drawable.jpg, // daj swój obrazek w drawable
-                    dialogOptions = npc.actions,
-                    onOptionSelected = { option ->
-                        Log.d("NPC_DEBUG","Niceee")
+                    npcName = npc.name, npcImage = R.drawable.jpg, // daj swój obrazek w drawable
+                    dialogOptions = actions, onOptionSelected = { option ->
+                        actions = ArrayList<Action>()
+                        if(option.nextActionChooser != null) {
+                            val actionResult = option.nextActionChooser.invoke()
+                            actions = actionResult.actions
+                        }
+
                         getResponse(npc, option) { newText ->
                             npcText = newText
                         }
@@ -77,19 +74,20 @@ class DialogActivity : ComponentActivity() {
     }
 }
 
-private fun DialogActivity.getResponse(
-    npc: NPCModel,
-    option: Action,
-    callback: (String) -> Unit
-) {
-    val history = mutableListOf(
-        OpenAIClient.Message("system", "Jestem Piotr i jestem klientem banku"),
-        OpenAIClient.Message("user", "Mówię: ${option.name}"),
-    )
 
+private fun DialogActivity.getResponse(
+    npc: NPC, option: Action, callback: (String) -> Unit
+) {
+
+    history.add(
+        OpenAIClient.Message(
+            "user",
+            "Mówię: ${option.visibleName}; chodzi mi o ${option.description}"
+        ),
+    )
     OpenAIClient.sendMessage(
         messages = history,
-        instructions = "Jesteś ${npc.name} właśnie rozmawiasz z osobą która przyszła do ciebie coś i masz się wcielić w role ${npc.job} o usposobieniu ${npc.relation.trait} zinterpretuj to według siebie, udawaj człowieka odpowiadaj tylko jak człowiek. Użytkownik wyśle ci swoją wiadomosć w formacie Mówie: {Zdanie na które muze odpowiedzieć}. Nie zdaradzaj że jesteś ai, nie zadawaj pytań. Aboslutnie nie zadawaj żadnych pytań. Odpowiedz twierdzaco pozytywnie, nie precyzuj niczego, konwersacja kończy się po twojej wypowiedzi, zostanie wyświetlona jako dialog z npc w grze, nie podpisuj się"
+        instructions = "Jesteś ${npc.name} właśnie rozmawiasz z osobą która przyszła do ciebie coś i masz się wcielić w role ${npc.job} o usposobieniu ${npc.relation.trait} zinterpretuj to według siebie, udawaj człowieka odpowiadaj tylko jak człowiek. Użytkownik wyśle ci swoją wiadomosć w formacie Mówie: {Zdanie na które muze odpowiedzieć}; mam na myśli {opis sytuacji, wybranej opcji dialogowej}. Nie zdaradzaj że jesteś ai, nie zadawaj pytań. Aboslutnie nie zadawaj żadnych pytań. Odpowiedz twierdzaco pozytywnie, nie precyzuj niczego, konwersacja kończy się po twojej wypowiedzi, zostanie wyświetlona jako dialog z npc w grze, nie podpisuj się"
     ) { response ->
         val reply = response?.output?.lastOrNull()?.content?.firstOrNull()?.text ?: "Hmm..."
         history.add(OpenAIClient.Message("assistant", reply))
@@ -140,12 +138,14 @@ fun NpcDialogScreen(
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.SpaceBetween
                 ) {
-                    Button(onClick = { onOptionSelected(dialogOptions[0]) }) {
-                        Text(dialogOptions[0].name)
+                    if (dialogOptions.isNotEmpty()) {
+                        Button(onClick = { onOptionSelected(dialogOptions[0]) }) {
+                            Text(dialogOptions[0].visibleName)
+                        }
                     }
                     if (dialogOptions.size > 1) {
                         Button(onClick = { onOptionSelected(dialogOptions[1]) }) {
-                            Text(dialogOptions[1].name)
+                            Text(dialogOptions[1].visibleName)
                         }
                     }
                 }
@@ -155,11 +155,11 @@ fun NpcDialogScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Button(onClick = { onOptionSelected(dialogOptions[2]) }) {
-                            Text(dialogOptions[2].name)
+                            Text(dialogOptions[2].visibleName)
                         }
                         if (dialogOptions.size > 3) {
                             Button(onClick = { onOptionSelected(dialogOptions[3]) }) {
-                                Text(dialogOptions[3].name)
+                                Text(dialogOptions[3].visibleName)
                             }
                         }
                     }
@@ -174,25 +174,6 @@ fun NpcDialogScreen(
             text = currentText,
             modifier = Modifier.padding(8.dp),
             style = MaterialTheme.typography.bodyLarge
-        )
-    }
-}
-
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    HackathonTheme {
-        var npcText by remember { mutableStateOf("Witaj podróżniku!") }
-
-        NpcDialogScreen(
-            npcName = "Strażnik",
-            npcImage = R.drawable.jpg, // daj swój obrazek w drawable
-            dialogOptions = listOf(),
-            onOptionSelected = { option ->
-                npcText = "NPC odpowiada na: $option"
-            },
-            currentText = npcText
         )
     }
 }

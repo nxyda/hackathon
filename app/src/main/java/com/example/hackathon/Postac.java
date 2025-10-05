@@ -20,6 +20,7 @@ public class Postac implements Serializable {
 
     private List<String> hobbys;
 
+    // inni ludzie
     private List<Postac> friends;
 
     public Postac() {
@@ -37,11 +38,11 @@ public class Postac implements Serializable {
         this.name = name;
     }
 
-    public char getGender() {
+    public GenderEnum getGender() {
         return gender;
     }
 
-    public void setGender(char gender) {
+    public void setGender(GenderEnum gender) {
         this.gender = gender;
     }
 
@@ -58,10 +59,11 @@ public class Postac implements Serializable {
     public void setAge(int age) {}
 
     public String getEducation() {
+    public EducationEnum getEducation() {
         return education;
     }
 
-    public void setEducation(String education) {
+    public void setEducation(EducationEnum education) {
         this.education = education;
     }
 
@@ -156,3 +158,4 @@ public class Postac implements Serializable {
 
     }
 }
+
