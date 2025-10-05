@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">hackathon</string>
     <string name="title_activity_dialog">DialogActivity</string>
+    <string name="friends_scroll_area">Lista znajomych</string>
 </resources>

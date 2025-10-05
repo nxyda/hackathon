@@ -70,6 +70,7 @@
         app:srcCompat="@drawable/button_yellow"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+
         tools:translationX="2dp"
         tools:translationY="0dp" />
 
@@ -236,6 +237,7 @@
 
     <Button
         android:id="@+id/mezczyzna"
+        android:textColor="@color/black"
         android:layout_width="90dp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -247,6 +249,7 @@
 
     <Button
         android:id="@+id/kobieta"
+        android:textColor="@color/black"
         android:layout_width="90dp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -258,6 +261,7 @@
 
     <Button
         android:id="@+id/sport"
+        android:textColor="@color/black"
         android:background="@android:color/transparent"
         android:layout_width="90dp"
         android:layout_height="48dp"
@@ -269,6 +273,7 @@
 
     <Button
         android:id="@+id/nauka"
+        android:textColor="@color/black"
         android:layout_width="90dp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -280,6 +285,7 @@
 
     <Button
         android:id="@+id/sztuka"
+        android:textColor="@color/black"
         android:layout_width="90dp"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -291,6 +297,7 @@
 
     <Button
         android:id="@+id/muzyka"
+        android:textColor="@color/black"
         android:layout_width="90dp"
         android:layout_height="48dp"
         android:text="Muzyka"
@@ -303,6 +310,7 @@
     <Button
         android:id="@+id/internet"
         android:layout_width="90dp"
+        android:textColor="@color/black"
         android:layout_height="48dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -315,6 +323,7 @@
         android:id="@+id/gotowanie"
         android:layout_width="90dp"
         android:layout_height="48dp"
+        android:textColor="@color/black"
         android:text="Gotowanie"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -354,6 +363,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="90dp"
         android:layout_height="48dp"
+        android:textColor="@color/black"
         android:text="Średnie"
         android:background="@android:color/transparent"
         tools:translationX="16dp"
@@ -378,6 +388,7 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="48dp"
         android:text="Wyższe"
+        android:textColor="@color/black"
         android:background="@android:color/transparent"
         tools:translationX="218dp"
         tools:translationY="280dp" />
@@ -413,6 +424,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_height="48dp"
+        android:textColor="@color/black"
         android:background="@android:color/transparent"
         android:text="Filmy"
         tools:translationX="199dp"
@@ -420,6 +432,7 @@
 
     <Button
         android:id="@+id/literatura"
+        android:textColor="@color/black"
         android:layout_width="90dp"
         android:layout_height="48dp"
         android:text="Literatura"
@@ -435,6 +448,7 @@
 
     <Button
         android:id="@+id/dalej"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Dalej"
