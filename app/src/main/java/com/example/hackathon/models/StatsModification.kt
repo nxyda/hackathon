@@ -2,6 +2,7 @@ package com.example.hackathon.models
 
 
 data class StatsModification(
+    var cost: Int = 1,
     var health: Int = 0,
     var education: EducationEnum? = null,
     var career: String? = null,

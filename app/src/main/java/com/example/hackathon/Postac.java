@@ -7,6 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 public class Postac implements Serializable {
+    public static int maxPoints;
     private String name;
     private GenderEnum gender;
     private int health;

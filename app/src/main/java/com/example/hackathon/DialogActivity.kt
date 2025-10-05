@@ -30,12 +30,13 @@ import androidx.compose.ui.unit.dp
 import com.example.hackathon.actions.Action
 import com.example.hackathon.actions.ActionResult
 import com.example.hackathon.buildings.Building
+import com.example.hackathon.buildings.BuildingBank
 import com.example.hackathon.buildings.BuildingClub
 import com.example.hackathon.models.NPC
 import com.example.hackathon.ui.theme.HackathonTheme
 
 class DialogActivity : ComponentActivity() {
-    val building: Building = BuildingClub()
+    val building: Building = BuildingBank()
     val history = mutableListOf(
         OpenAIClient.Message("system", "Jestem Piotr i jestem w ${building.name}"),
 
@@ -87,7 +88,7 @@ private fun DialogActivity.getResponse(
     )
     OpenAIClient.sendMessage(
         messages = history,
-        instructions = "Jesteś ${npc.name} właśnie rozmawiasz z osobą która przyszła do ciebie coś i masz się wcielić w role ${npc.job} o usposobieniu ${npc.relation.trait} zinterpretuj to według siebie, udawaj człowieka odpowiadaj tylko jak człowiek. Użytkownik wyśle ci swoją wiadomosć w formacie Mówie: {Zdanie na które muze odpowiedzieć}; mam na myśli {opis sytuacji, wybranej opcji dialogowej}. Nie zdaradzaj że jesteś ai, nie zadawaj pytań. Aboslutnie nie zadawaj żadnych pytań. Odpowiedz twierdzaco pozytywnie, nie precyzuj niczego, konwersacja kończy się po twojej wypowiedzi, zostanie wyświetlona jako dialog z npc w grze, nie podpisuj się"
+        instructions = "Jesteś ${npc.name} właśnie rozmawiasz z osobą która przyszła do ciebie coś i masz się wcielić w role ${npc.job} o usposobieniu ${npc.relation.trait} zinterpretuj to według siebie, udawaj człowieka odpowiadaj tylko jak człowiek. Użytkownik wyśle ci swoją wiadomosć w formacie Mówie: {Zdanie na które muze odpowiedzieć}; mam na myśli {opis sytuacji, wybranej opcji dialogowej}. Nie zdaradzaj że jesteś ai, nie zadawaj pytań. Aboslutnie nie zadawaj żadnych pytań. Odpowiedz twierdzaco pozytywnie, nie precyzuj niczego, konwersacja kończy się po twojej wypowiedzi, zostanie wyświetlona jako dialog z npc w grze, nie podpisuj się. Uwzględniaj historie, jeśli zapytania się powtarzają uwzględnij jaki to może mieć wpływ"
     ) { response ->
         val reply = response?.output?.lastOrNull()?.content?.firstOrNull()?.text ?: "Hmm..."
         history.add(OpenAIClient.Message("assistant", reply))

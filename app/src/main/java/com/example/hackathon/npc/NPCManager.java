@@ -14,7 +14,7 @@ public class NPCManager {
         }
 
         for(int i = 0; i < 5; i++){
-            npcs.add(NPCBuilder.buildBasic("bankier", "worker", new ArrayList<>()));
+            npcs.add(NPCBuilder.buildBasic("Bankier", "worker", new ArrayList<>()));
         }
 
         for(int i = 0; i < 10; i++){
